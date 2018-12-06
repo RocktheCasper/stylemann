@@ -9,57 +9,132 @@
 </head>
 
 <body>
-    <section id="data">
-        <div id="section-wrapper-splash">
-            <div class="data-splash" style="background-image: url()">
-                <img id="logo" alt="" src="">
-            </div>
-        </div>
-        <div id="section-wrapper-links">
-            <div id="store-links">
-                <div id="button1">
-                    <a id="link1" href="">
-                        <img id="billede1" src="">
-                    </a>
-                    <p id="tekst1"></p>
-                </div>
-                <div id="button2">
-                    <a id="link2" href="">
-                        <img id="billede2" src="">
-                    </a>
-                    <p id="tekst2"></p>
-                </div>
-                <div id="button3">
-                    <a id="link3" href="">
-                        <img id="billede3" src="">
-                    </a>
-                    <p id="tekst3"></p>
-                </div>
-                <div id="button4">
-                    <a id="link4" href="">
-                        <img id="billede4" src="">
-                    </a>
-                    <p id="tekst4"></p>
-                </div>
-            </div>
-        </div>
-        <div id="section-quote">
-            <div id="quote">
-                <p id="quote-text">
+    <section class="page-container">
 
-                </p>
-            </div>
-        </div>
-        <div id="section-gallery">
-            <div id="data-gallery">
-                <div id="gallery-billede1"><img alt="" src=""></div>
-                <div id="gallery-billede2"><img alt="" src=""></div>
-                <div id="gallery-billede3"><img alt="" src=""></div>
-            </div>
-        </div>
     </section>
-    <script>
 
+    <template id="home">
+        <div class="data-splash">
+
+        </div>
+
+        <div class="featured-content">
+
+            <!--- Box 1 --->
+            <div id="link1">
+                <div class="billede">
+                    <a id="url1" href="">
+                        <img id="icon1" alt="" src="">
+                    </a>
+                </div>
+                <div id="link1-overskrift">
+
+                </div>
+                <div id="link1-text">
+
+                </div>
+            </div>
+
+            <!--- Box 2 --->
+            <div id="link2">
+                <div class="billede">
+                    <a id="url2" href="">
+                        <img id="icon2" alt="" src="">
+                    </a>
+                </div>
+                <div id="link2-overskrift">
+
+                </div>
+                <div id="link2-text">
+
+                </div>
+            </div>
+
+            <!--- Box 3 --->
+            <div id="link3">
+                <div class="billede">
+                    <a id="url1" href="">
+                        <img id="icon3" alt="" src="">
+                    </a>
+                </div>
+                <div id="link3-overskrift">
+
+                </div>
+                <div id="link3-text">
+
+                </div>
+            </div>
+            <!--- Box 4 --->
+            <div id="link4">
+                <div class="billede">
+                    <a id="url4" href="">
+                        <img id="icon4" alt="" src="">
+                    </a>
+                </div>
+                <div id="link4-overskrift">
+
+                </div>
+                <div id="link4-text">
+
+                </div>
+            </div>
+        </div>
+        <p class="citat">
+
+        </p>
+    </template>
+
+    <script>
+        let dest = document.querySelector(".page-container");
+
+        let jsonFile;
+
+
+
+        document.addEventListener("DOMContentLoaded", getJson);
+
+        async function getJson() {
+
+            let myJson = await fetch("http://rockbottomproductions.dk/kea/sem2/stylemann/wp-json/wp/v2/homepage");
+
+            jsonFile = await myJson.json();
+
+
+            visIndhold();
+        }
+
+        function visIndhold() {
+            let dest = document.querySelector(".page-container"),
+                temp = document.querySelector("#home");
+
+            let klon = temp.cloneNode(true).content;
+
+            jsonFile.forEach(indholdData => {
+                /* Featured content boks 1 */
+                klon.querySelector("#url1").href = indholdData.acf.link1;
+                klon.querySelector("#icon1").src = indholdData.acf.icon1;
+                klon.querySelector("#link1-overskrift").innerHTML = "<h2>" + indholdData.acf.h2_1 + "</h2>";
+                klon.querySelector("#link1-text").innerHTML = indholdData.acf.icontekst1;
+                /* Featured content boks 2 */
+                klon.querySelector("#url2").href = indholdData.acf.link2;
+                klon.querySelector("#icon2").src = indholdData.acf.icon2;
+                klon.querySelector("#link2-overskrift").innerHTML = "<h2>" + indholdData.acf.h2_2 + "</h2>";
+                klon.querySelector("#link2-text").innerHTML = indholdData.acf.icontekst2;
+                /* Featured content boks 3 */
+                klon.querySelector("#url3").href = indholdData.acf.link3;
+                klon.querySelector("#icon3").src = indholdData.acf.icon3;
+                klon.querySelector("#link3-overskrift").innerHTML = "<h2>" + indholdData.acf.h2_3 + "</h2>";
+                klon.querySelector("#link3-text").innerHTML = indholdData.acf.icontekst3;
+                /* Featured content boks 4 */
+                klon.querySelector("#url4").href = indholdData.acf.link4;
+                klon.querySelector("#icon4").src = indholdData.acf.icon4;
+                klon.querySelector("#link4-overskrift").innerHTML = "<h2>" + indholdData.acf.h2_4 + "</h2>";
+                klon.querySelector("#link4-text").innerHTML = indholdData.acf.icontekst4;
+
+                klon.querySelector(".citat").textContent = indholdData.acf.citat;
+                dest.appendChild(klon);
+            })
+        }
     </script>
 </body>
 
