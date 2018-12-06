@@ -79,9 +79,21 @@
                 </div>
             </div>
         </div>
-        <p class="citat">
+        <div id="citat">
+            <p class="citat">
 
-        </p>
+            </p>
+        </div>
+        <div id="gallery">
+            <div class="billede">
+                <img id="billede1" alt="" src=""></div>
+
+            <div class="billede">
+                <img id="billede2" alt="" src=""></div>
+
+            <div class="billede">
+                <img id="billede3" alt="" src=""></div>
+        </div>
     </template>
 
     <script>
@@ -132,6 +144,11 @@
                 klon.querySelector("#link4-text").innerHTML = indholdData.acf.icontekst4;
 
                 klon.querySelector(".citat").textContent = indholdData.acf.citat;
+
+                klon.querySelector("#billede1").src = indholdData.acf.billede1;
+                klon.querySelector("#billede2").src = indholdData.acf.billede2;
+                klon.querySelector("#billede3").src = indholdData.acf.billede3;
+
                 dest.appendChild(klon);
             })
         }
