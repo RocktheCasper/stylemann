@@ -9,7 +9,24 @@
 </head>
 
 <body>
-    <script></script>
+
+    <main>
+        <section class="page-container">
+        </section>
+    </main>
+    <template id="om-os">
+    </template>
+    <script>
+        let dest = document.querySelector(".page-container");
+
+        let jsonFile;
+        document.addEventListener("DOMContenLoaded", getJson);
+
+        async function getJson() {
+
+            let myJson = await fetch("")
+        }
+    </script>
 </body>
 
 </html>
