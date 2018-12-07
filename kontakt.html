@@ -9,7 +9,71 @@
 </head>
 
 <body>
-    <script></script>
+    <main>
+        <section class="page-container">
+
+        </section>
+
+        <template id="kontakt">
+            <div id="box1">
+                <div id="icon1"></div>
+                <div id="overskrift1">
+                    <h2>Info</h2>
+                </div>
+                <div id="tekst1"></div>
+            </div>
+            <div id="box2">
+                <div id="icon2"></div>
+                <div id="overskrift2">
+                    <h2>Åbningstider</h2>
+                </div>
+                <div id="tekst2"></div>
+            </div>
+
+            <div id="box3">
+                <div id="icon3"></div>
+                <div id="overskrift3">
+                    <h2>Adresse</h2>
+                </div>
+                <div id="tekst3"></div>
+            </div>
+            <div class="google-maps"></div>
+        </template>
+    </main>
+    <script>
+        let dest = document.querySelector(".page-container");
+
+        let jsonFile;
+
+
+        document.addEventListener("DOMContentLoaded", getJson);
+
+        async function getJson() {
+
+            let myJson = await fetch("http://rockbottomproductions.dk/kea/sem2/stylemann/wp-json/wp/v2/kontakt");
+
+            jsonFile = await myJson.json();
+
+            visIndhold();
+        }
+
+        function visIndhold() {
+            let dest = document.querySelector(".page-container"),
+                temp = document.querySelector("#kontakt");
+
+
+            let klon = temp.cloneNode(true).content;
+
+            jsonFile.forEach(indholdData => {
+
+                klon.querySelector("#tekst1").innerHTML = "<p>" + indholdData.acf.info + "</p>";
+                klon.querySelector("#tekst2").innerHTML = "<p>" + indholdData.acf.abningstider + "</p>";
+                klon.querySelector("#tekst3").innerHTML = "<p>" + indholdData.acf.adresse + "</p>";
+
+                dest.appendChild(klon);
+            })
+        }
+    </script>
 </body>
 
 </html>
