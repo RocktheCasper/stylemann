@@ -14,6 +14,7 @@
     </section>
 
     <template id="home">
+        <a class="indhold" href=""><button class="button"></button></a>
         <div class="data-splash">
 
         </div>
@@ -152,6 +153,33 @@
                 dest.appendChild(klon);
             })
         }
+        let indhold;
+        document.addEventListener("DOMContentLoaded", hentJson);
+        async function hentJson() {
+            let myJson2 = await fetch("http://rockbottomproductions.dk/kea/sem2/stylemann/wp-json/wp/v2/indhold");
+            indhold = await myJson2.json();
+            visIndhold2();
+        }
+
+        function visIndhold2() {
+            let dest = document.querySelector(".page-container"),
+                temp = document.querySelector("#home");
+
+            indhold.forEach(dataIndhold => {
+                dataIndhold.slug = i;
+                console.log(i);
+
+                let klon = temp.cloneNode(true).content;
+
+                klon.querySelector(".indhold").addEventListener("click", () => {
+                    window.location.href = "indhold.html?slug=" + dataIndhold.slug;
+                });
+                klon.querySelector(".button").innerHTML = dataIndhold.acf.overskrift;
+
+                dest.appendChild(klon);
+            })
+        }
+
     </script>
 </body>
 

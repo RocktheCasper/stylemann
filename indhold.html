@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indhold</title>
+</head>
+
+<body>
+
+    <section id="data-container">
+        <div id="overskrift"></div>
+        <div id="billede"><img class="billede" alt="" src=""></div>
+        <div id="tekst"></div>
+    </section>
+    <script>
+        let urlParams = new URLSearchParams(window.location.search);
+        let id = urlParams.get("id");
+        console.log(id);
+        let articles;
+        document.addEventListener("DOMContentLoaded", hentJson);
+
+        async function hentJson() {
+
+            let myJson = await fetch("http://rockbottomproductions.dk/kea/sem2/stylemann/wp-json/wp/v2/indhold");
+            articles = await myJson.json();
+            visIndhold();
+        }
+
+        function visIndhold() {
+            let dest = document.querySelector("#data-container");
+            //løb personlisten igennem og lav en klon
+
+            articles.forEach(indhold => {
+                if (indhold.id == id) {
+                    dest.querySelector("#overskrift").innerHTML = "<h2>" + indhold.acf.overskrift + "</h2>";
+                    dest.querySelector(".billede").src = indhold.acf.billede;
+                    dest.querySelector("#tekst").innerHTML = "<p>" + indhold.acf.tekst + "</p>";
+
+                }
+            })
+    </script>
+</body>
+
+</html>
