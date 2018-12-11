@@ -9,12 +9,17 @@
 </head>
 
 <body>
+    <section class="button-container">
+
+    </section>
     <section class="page-container">
 
     </section>
-
-    <template id="home">
+    <template id="button-temp">
         <a class="indhold" href=""><button class="button"></button></a>
+    </template>
+    <template id="home">
+
         <div class="data-splash">
 
         </div>
@@ -158,6 +163,28 @@
         async function hentJson() {
             let myJson2 = await fetch("http://rockbottomproductions.dk/kea/sem2/stylemann/wp-json/wp/v2/indhold");
             indhold = await myJson2.json();
+            visData();
+        }
+
+        function visData() {
+            let dest = document.querySelector(".button-container"),
+                temp = document.querySelector("#button-temp");
+
+            indhold.forEach(data => {
+                let klon = temp.cloneNode(true).content;
+
+                klon.querySelector(".button").textContent = data.acf.overskrift;
+                klon.querySelector(".indhold").href = "indhold.html?slug=" + data.slug;
+                dest.appendChild(klon);
+            })
+        }
+
+        /*
+        let indhold;
+        document.addEventListener("DOMContentLoaded", hentJson);
+        async function hentJson() {
+            let myJson2 = await fetch("http://rockbottomproductions.dk/kea/sem2/stylemann/wp-json/wp/v2/indhold");
+            indhold = await myJson2.json();
             visIndhold2();
         }
 
@@ -174,12 +201,12 @@
                 klon.querySelector(".indhold").addEventListener("click", () => {
                     window.location.href = "indhold.html?slug=" + dataIndhold.slug;
                 });
+                klon.querySelector(".indhold").href = "indhold.html?slug=" + dataIndhold.sluf;
                 klon.querySelector(".button").innerHTML = dataIndhold.acf.overskrift;
 
                 dest.appendChild(klon);
             })
-        }
-
+        }*/
     </script>
 </body>
 
