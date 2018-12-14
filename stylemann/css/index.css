@@ -1,0 +1,779 @@
+@import url('https://fonts.googleapis.com/css?family=Arvo');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
+body {
+    margin: 0;
+}
+
+
+/***************************************HEADERSTART******************************************/
+
+.splash {
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.splash .wrapper__video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+p {
+    margin: 2px;
+}
+.logo {
+    width: 350px;
+    height: 350px;
+    background-image: url(img/green_logo_expand.svg);
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: white;
+    font-size: 22px;
+    border: none;
+    padding: 15px 22px;
+    font-family: "Josefin Slab";
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 32px;
+    height: 4px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+.parent_dropbtn {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.parent_dropdown {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.parent_dropdown-content {
+    margin-right: 58px;
+}
+
+.parent_dropdown-content a {
+    text-decoration: none;
+    text-align: left;
+    color: white;
+    font-size: 15px;
+    font-family: "arvo";
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    z-index: 1;
+    width: 180px;
+}
+
+.dropdown-content a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    padding: 10px 10px;
+}
+
+.dropbtn a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown .dropbtn a {
+    text-align: center;
+    font-size: 22px;
+    font-family: "Josefin Slab";
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    color: black;
+    background-color: white;
+}
+
+.dropdown:hover .dropbtn a {
+    color: black;
+    background-color: white;
+}
+
+.parent_dropbtn {
+    display: none;
+}
+
+.parent_dropdown-content {
+    text-align: right;
+}
+
+.parent_dropdown-content {
+    position: relative;
+    top: 0px;
+}
+
+.parent_dropdown-content a:hover {
+    color: black;
+}
+
+.dropdown-content a:hover {
+    color: gray;
+}
+
+.facebook_icon {
+    background-image: url(img/iconmonstr-facebook-7.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 32px;
+    width: 32px;
+    position: absolute;
+    top: 9px;
+    right: 10px;
+}
+
+@media screen and (min-width:1440px) {
+    .logo {
+    width: 500px;
+    height: 500px;
+    top: 42%;
+}
+}
+
+@media screen and (max-width:830px) {
+    .logo {
+    width: 300px;
+    height: 300px;
+    top: 40%;
+}
+    .parent_dropbtn {
+        display: block;
+    }
+    .facebook_icon {
+        top: 11px;
+        right: 11px;
+    }
+    .dropbtn {
+        background-color: white;
+        color: black;
+        width: 100%;
+        text-align: left;
+        padding: 10px 10px;
+        text-decoration-line: underline;
+    }
+    .dropdown .dropbtn a {
+        text-align: left;
+        padding: 0px 0px;
+    }
+    .dropdown-content {
+        display: block;
+        position: relative;
+        width: auto;
+    }
+    .parent_dropdown-content {
+        text-align: left;
+        margin-right: 13px;
+    }
+    .parent_dropdown {
+        position: absolute;
+        top: 9px;
+        left: 12px;
+    }
+    .parent_dropdown-content {
+        top: 8px;
+        display: none;
+        z-index: 1;
+    }
+    .dropdown {
+        display: block;
+    }
+    .parent_dropdown-content a {
+        text-decoration: none;
+        display: block;
+        color: black;
+        text-align: left;
+        padding: 7px 20px;
+    }
+    .dropdown:hover .dropbtn {
+        color: gray;
+    }
+    .parent_dropdown-content a:hover {}
+    .show {
+        display: block;
+    }
+    .dropdown .dropbtn a:hover {
+        color: gray;
+    }
+}
+
+
+/***************************************HEADERSLUT******************************************/
+/***************************************FOOTERSRART******************************************/
+
+footer {
+    height: auto;
+    color: black;
+    border-top: 1px solid black;
+    display: grid;
+    grid-template-columns: auto 220px 260px 220px auto;
+    margin-bottom: 10px;
+}
+
+.adresse {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin-top: 15px;
+}
+
+.aabningtider {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    margin-top: 15px;
+}
+
+.kontakt {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    margin-top: 15px;
+}
+
+.overskrift_footer {
+    font-family: "Josefin Slab";
+    font-size: 22px;
+    display: block;
+    margin: 10px;
+}
+
+.under_footer {
+    font-family: "arvo";
+    font-size: 15px;
+    display: block;
+    margin: 10px;
+}
+
+
+@media screen and (max-width:700px) {
+    footer {
+        height: auto;
+        display: grid;
+        grid-template-columns: auto 220px auto;
+        grid-template-rows: 1fr 1fr 1fr;
+        margin-bottom: 0;
+    }
+    .adresse {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    .aabningtider {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        margin-top: 5px;
+    }
+    .kontakt {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        margin-top: 0px;
+    }
+}
+
+
+/***************************************FOOTERSLUT******************************************/
+
+
+/***************************************FORSIDESTART******************************************/
+
+.page-container {
+    display: grid;
+    grid-template-columns: 12% 1fr 12%;
+    grid-template-rows: 440px 100px 500px;
+    grid-gap: 20px;
+    margin: 20px;
+    margin-bottom: 40px;
+}
+
+
+/******************************BOX1START********************************/
+
+.featured-content {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+#link1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    width: 100%;
+    height: 100%;
+}
+
+#link1 a {
+    text-decoration: none;
+    color: black;
+}
+
+#link1 a:hover {
+    color: gray;
+}
+
+#link2 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    width: 100%;
+    height: 100%;
+}
+
+#link2 a {
+    text-decoration: none;
+    color: black;
+}
+
+#link2 a:hover {
+    color: gray;
+}
+
+#link3 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    width: 100%;
+    height: 100%;
+}
+
+#link3 a {
+    text-decoration: none;
+    color: black;
+}
+
+#link3 a:hover {
+    color: gray;
+}
+
+#link4 {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    width: 100%;
+    height: 100%;
+}
+
+#link4 a {
+    text-decoration: none;
+    color: black;
+}
+
+#link4 a:hover {
+    color: gray;
+}
+
+
+/******************************BOX1SLUT********************************/
+
+
+/******************************BOX2START********************************/
+
+#citat {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "Josefin Slab";
+    font-size: 35px;
+}
+
+
+/******************************BOX2SLUT********************************/
+
+
+/******************************BOX3START********************************/
+
+#gallery {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 250px 250px;
+    grid-gap: 20px;
+}
+
+.forside_billede1 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    width: 100%;
+    height: 100%;
+}
+
+.forside_billede2 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    width: 100%;
+    height: 100%;
+}
+
+.forside_billede3 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    width: 100%;
+    height: 100%;
+}
+
+
+/******************************BOX3SLUT********************************/
+
+
+/*************************************TABLETSTART********************************/
+
+@media only screen and (max-width: 1350px) {
+    .page-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 440px 100px 500px;
+    }
+    .featured-content {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        width: 100%;
+        height: 100%;
+    }
+    #citat {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        width: 100%;
+        height: 100%;
+    }
+    #gallery {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+/*************************************TABLETSLUT********************************/
+
+
+/*************************************MOBILESTART********************************/
+
+@media only screen and (max-width: 1000px) {
+    .page-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 880px 100px 500px;
+    }
+    .featured-content {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    #link1 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        width: 100%;
+        height: 100%;
+    }
+    #link2 {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        width: 100%;
+        height: 100%;
+    }
+    #link3 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        width: 100%;
+        height: 100%;
+    }
+    #link4 {
+        grid-column-start: 2;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        width: 100%;
+        height: 100%;
+    }
+    #citat {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        width: 100%;
+        height: 100%;
+    }
+    #gallery {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 250px 250px;
+    }
+}
+
+
+/*************************************MOBILESSLUT********************************/
+
+@media only screen and (max-width: 550px) {
+    .page-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1760px 200px 800px;
+        margin-bottom: 80px;
+    }
+    /******************************BOX1START********************************/
+    .featured-content {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+    #link1 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        width: 100%;
+        height: 100%;
+    }
+    #link2 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        width: 100%;
+        height: 100%;
+    }
+    #link3 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        width: 100%;
+        height: 100%;
+    }
+    #link4 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 4;
+        grid-row-end: 5;
+        width: 100%;
+        height: 100%;
+    }
+    /******************************BOX1SLUT********************************/
+    /******************************BOX2START********************************/
+    #citat {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        width: 100%;
+        height: 100%;
+    }
+    /******************************BOX2SLUT********************************/
+    /******************************BOX3START********************************/
+    #gallery {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 200px 200px 200px 200px;
+    }
+    .forside_billede1 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        width: 100%;
+        height: 100%;
+    }
+    .forside_billede2 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        width: 100%;
+        height: 100%;
+    }
+    .forside_billede3 {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 4;
+        grid-row-end: 5;
+        width: 100%;
+        height: 100%;
+    }
+    /******************************BOX3SLUT********************************/
+}
+
+#gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.billede img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover;
+}
+
+.billede {
+    margin-top: 30px;
+}
+
+#link1-overskrift {
+    margin: 10%;
+    text-align: center;
+    font-family: "Josefin Slab";
+    font-size: 18px;
+}
+
+#link1-text {
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 15px;
+    font-family: "arvo";
+}
+
+#link2-overskrift {
+    margin: 10%;
+    text-align: center;
+    font-family: "Josefin Slab";
+    font-size: 18px;
+}
+
+#link2-text {
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 15px;
+    font-family: "arvo";
+}
+
+#link3-overskrift {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    text-align: center;
+    font-family: "Josefin Slab";
+    font-size: 18px;
+}
+
+#link3-text {
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 15px;
+    font-family: "arvo";
+}
+
+#link4-overskrift {
+    margin: 10%;
+    text-align: center;
+    font-family: "Josefin Slab";
+    font-size: 18px;
+}
+
+#link4-text {
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 15px;
+    font-family: "arvo";
+}
+
+.citat {
+    text-align: center;
+}
+
+#billede1 {}
+
+#billede2 {}
+
+#billede3 {}
+
+
+/***************************************FORSIDESLUT******************************************/

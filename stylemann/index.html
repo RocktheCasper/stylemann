@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Stylemann</title>
+</head>
+
+<body>
+    <div class="splash">
+            <video autoplay loop muted class="wrapper__video">
+            <source src="/css/img/splashysplash.mp4">
+            </video>
+        </div>
+        <div class="logo"></div>
+    <header>
+
+        <div class="parent_dropdown">
+            <div onclick="myFunction()" class="parent_dropbtn">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <div id="myDropdown" class="parent_dropdown-content">
+                <div class="dropdown">
+                    <button class="dropbtn">Services</button>
+                    <div class="dropdown-content" id="services">
+                        <a href="bestil-tid.php">Bestil Tid</a>
+
+
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="om-os.php">Om os</a></button>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Jakkesæt</button>
+                    <div id="jakkesaet" class="dropdown-content">
+
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Accessories</button>
+                    <div id="accessories" class="dropdown-content">
+
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Andet</button>
+                    <div id="andet" class="dropdown-content">
+
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn"><a href="kontakt.php">Kontakt</a></button>
+                </div>
+            </div>
+        </div>
+        <a href="https://www.facebook.com/stylemann.dk/">
+            <div class="facebook_icon"></div>
+        </a>
+    </header>
+    <section class="page-container">
+
+    </section>
+    <footer>
+        <div class="adresse">
+            <a class="overskrift_footer">Adresse:</a>
+            <a class="under_footer">Amagerbrogade 85</a>
+            <a class="under_footer">2300</a>
+            <a class="under_footer">KHB. S</a>
+        </div>
+        <div class="aabningtider">
+            <a class="overskrift_footer">Abningtider:</a>
+            <a class="under_footer">Mandag-fredag: &nbsp;&nbsp;10-17.30</a>
+            <a class="under_footer">Lørdag: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10-14.00</a>
+            <a class="under_footer">Søndag: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lukket</a>
+        </div>
+        <div class="kontakt">
+            <a class="overskrift_footer">E-mail:</a>
+            <a class="under_footer">Stylemann@stykemann.dk</a>
+            <a class="overskrift_footer">Telefon:</a>
+            <a class="under_footer">51 46 67 04</a>
+        </div>
+    </footer>
+    <template id="link-button">
+        <a class="link" href="">
+            <p class="link-text">
+
+            </p>
+        </a>
+    </template>
+    <template id="home">
+        <div class="featured-content">
+
+            <!--- Box 1 --->
+            <div id="link1">
+                <div class="billede">
+                    <a id="url1" href="">
+                        <img id="icon1" alt="" src="">
+                    </a>
+                </div>
+                <a href="#"><div id="link1-overskrift">
+
+                </div></a>
+                <div id="link1-text">
+
+                </div>
+            </div>
+
+            <!--- Box 2 --->
+            <div id="link2">
+                <div class="billede">
+                    <a id="url2" href="">
+                        <img id="icon2" alt="" src="">
+                    </a>
+                </div>
+                <a href="#"><div id="link2-overskrift">
+
+                </div></a>
+                <div id="link2-text">
+
+                </div>
+            </div>
+
+            <!--- Box 3 --->
+            <div id="link3">
+                <div class="billede">
+                    <a id="url3" href="">
+                        <img id="icon3" alt="" src="">
+                    </a>
+                </div>
+                <a href="#"><div id="link3-overskrift">
+
+                </div></a>
+                <div id="link3-text">
+
+                </div>
+            </div>
+            <!--- Box 4 --->
+            <div id="link4">
+                <div class="billede">
+                    <a id="url4" href="">
+                        <img id="icon4" alt="" src="">
+                    </a>
+                </div>
+                <a href="#"><div id="link4-overskrift">
+
+                </div></a>
+                <div id="link4-text">
+
+                </div>
+            </div>
+        </div>
+        <div id="citat">
+            <p class="citat">
+
+            </p>
+        </div>
+        <div id="gallery">
+            <div class="forside_billede1">
+                <img id="billede1" alt="" src=""></div>
+
+            <div class="forside_billede2">
+                <img id="billede2" alt="" src=""></div>
+
+            <div class="forside_billede3">
+                <img id="billede3" alt="" src=""></div>
+        </div>
+    </template>
+    <script src="js/script.js"></script>
+    <script>
+        let dest = document.querySelector(".page-container");
+
+        let jsonFile;
+
+
+
+        document.addEventListener("DOMContentLoaded", getJson);
+
+        async function getJson() {
+
+            let myJson = await fetch("http://rockbottomproductions.dk/kea/sem2/stylemann/wp-json/wp/v2/homepage");
+
+            jsonFile = await myJson.json();
+
+
+            visIndhold();
+        }
+
+        function visIndhold() {
+            let dest = document.querySelector(".page-container"),
+                temp = document.querySelector("#home");
+
+            let klon = temp.cloneNode(true).content;
+
+            jsonFile.forEach(indholdData => {
+                // Featured content boks 1
+                klon.querySelector("#url1").href = indholdData.acf.link1;
+                klon.querySelector("#icon1").src = indholdData.acf.icon1;
+                klon.querySelector("#link1-overskrift").innerHTML = "<h2>" + indholdData.acf.h2_1 + "</h2>";
+                klon.querySelector("#link1-text").innerHTML = indholdData.acf.icontekst1;
+                // Featured content boks 2
+                klon.querySelector("#url2").href = indholdData.acf.link2;
+                klon.querySelector("#icon2").src = indholdData.acf.icon2;
+                klon.querySelector("#link2-overskrift").innerHTML = "<h2>" + indholdData.acf.h2_2 + "</h2>";
+                klon.querySelector("#link2-text").innerHTML = indholdData.acf.icontekst2;
+                // Featured content boks 3
+                klon.querySelector("#url3").href = indholdData.acf.link3;
+                klon.querySelector("#icon3").src = indholdData.acf.icon3;
+                klon.querySelector("#link3-overskrift").innerHTML = "<h2>" + indholdData.acf.h2_3 + "</h2>";
+                klon.querySelector("#link3-text").innerHTML = indholdData.acf.icontekst3;
+                // Featured content boks 4
+                klon.querySelector("#url4").href = indholdData.acf.link4;
+                klon.querySelector("#icon4").src = indholdData.acf.icon4;
+                klon.querySelector("#link4-overskrift").innerHTML = "<h2>" + indholdData.acf.h2_4 + "</h2>";
+                klon.querySelector("#link4-text").innerHTML = indholdData.acf.icontekst4;
+
+                klon.querySelector(".citat").textContent = indholdData.acf.citat;
+
+                klon.querySelector("#billede1").src = indholdData.acf.billede1;
+                klon.querySelector("#billede2").src = indholdData.acf.billede2;
+                klon.querySelector("#billede3").src = indholdData.acf.billede3;
+
+                dest.appendChild(klon);
+            })
+        }
+
+
+        let indhold;
+        document.addEventListener("DOMContentLoaded", hentJson);
+        async function hentJson() {
+            let myJson2 = await fetch("http://rockbottomproductions.dk/kea/sem2/stylemann/wp-json/wp/v2/indhold");
+            indhold = await myJson2.json();
+            visServices();
+            visJakkesæt();
+            visAccessories();
+            visAndet();
+        }
+
+        function visServices() {
+
+            let dest = document.querySelector("#services"),
+                temp = document.querySelector("#link-button");
+            indhold.forEach(data => {
+                if (data.acf.type.label == "Services") {
+                    let klon = temp.cloneNode(true).content;
+
+                    klon.querySelector(".link-text").textContent = data.acf.overskrift;
+                    klon.querySelector(".link").href = "indhold.php?slug=" + data.slug;
+                    dest.appendChild(klon);
+                }
+            })
+        }
+
+        function visJakkesæt() {
+
+            let dest = document.querySelector("#jakkesaet"),
+                temp = document.querySelector("#link-button");
+            indhold.forEach(data => {
+                if (data.acf.type.label == "Jakkesæt") {
+                    let klon = temp.cloneNode(true).content;
+
+                    klon.querySelector(".link-text").textContent = data.acf.overskrift;
+                    klon.querySelector(".link").href = "indhold.php?slug=" + data.slug;
+                    dest.appendChild(klon);
+                }
+            })
+        }
+
+        function visAccessories() {
+
+            let dest = document.querySelector("#accessories"),
+                temp = document.querySelector("#link-button");
+            indhold.forEach(data => {
+                if (data.acf.type.label == "Accessories") {
+                    let klon = temp.cloneNode(true).content;
+
+                    klon.querySelector(".link-text").textContent = data.acf.overskrift;
+                    klon.querySelector(".link").href = "indhold.php?slug=" + data.slug;
+                    dest.appendChild(klon);
+                }
+            })
+        }
+
+        function visAndet() {
+
+            let dest = document.querySelector("#andet"),
+                temp = document.querySelector("#link-button");
+            indhold.forEach(data => {
+                if (data.acf.type.label == "Andet") {
+                    let klon = temp.cloneNode(true).content;
+
+                    klon.querySelector(".link-text").textContent = data.acf.overskrift;
+                    klon.querySelector(".link").href = "indhold.php?slug=" + data.slug;
+                    dest.appendChild(klon);
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

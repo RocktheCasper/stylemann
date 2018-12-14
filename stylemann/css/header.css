@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css?family=Arvo');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
+
+body {
+    margin: 0;
+}
+
+/***************************************HEADERSTART******************************************/
+
+header {
+    height: 50px;
+    border-bottom: 1px solid black;
+}
+
+.icon {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 6px;
+    left: 8px;
+    background-image: url(img/green_icon40px.svg);
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: black;
+    font-size: 22px;
+    border: none;
+    padding: 15px 22px;
+    font-family: "Josefin Slab";
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 32px;
+    height: 4px;
+    background-color: black;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+.parent_dropbtn {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.parent_dropdown-content {
+    margin-right: 58px;
+}
+
+.parent_dropdown-content a {
+    text-decoration: none;
+    text-align: left;
+    color: white;
+    font-size: 15px;
+    font-family: "arvo";
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    width: 180px;
+    top: 51px;
+}
+
+p {
+    margin: 2px;
+}
+
+.dropdown-content a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    padding: 10px 10px;
+}
+
+.dropbtn a {
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown .dropbtn a {
+    text-align: center;
+    font-size: 22px;
+    font-family: "Josefin Slab";
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    color: gray;
+}
+
+.dropdown:hover .dropbtn a {
+    color: gray;
+    background-color: white;
+}
+
+.parent_dropbtn {
+    display: none;
+}
+
+.parent_dropdown-content {
+    text-align: right;
+}
+
+.parent_dropdown-content {
+    position: relative;
+    top: 0px;
+}
+
+.parent_dropdown-content a:hover {
+    color: black;
+}
+
+.dropdown-content a:hover {
+    color: gray;
+}
+
+.facebook_icon {
+    background-image: url(img/iconmonstr-facebook-6.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 32px;
+    width: 32px;
+    position: absolute;
+    top: 9px;
+    right: 10px;
+}
+
+@media screen and (max-width:850px) {
+    .parent_dropbtn {
+        display: block;
+    }
+    .facebook_icon {
+        top: 11px;
+        right: 11px;
+    }
+    .icon {
+        width: 45px;
+        height: 45px;
+        top: 6px;
+        left: 44%;
+    }
+    .dropbtn {
+        background-color: white;
+        color: black;
+        width: 100%;
+        text-align: left;
+        padding: 10px 10px;
+        text-decoration-line: underline;
+    }
+    .dropdown .dropbtn a {
+        text-align: left;
+        padding: 0px 0px;
+    }
+    .dropdown-content {
+        display: block;
+        position: relative;
+        width: auto;
+        top: 0px;
+    }
+    .parent_dropdown-content {
+        text-align: left;
+        margin-right: 17px;
+    }
+    .parent_dropdown {
+        position: relative;
+        top: 13px;
+        left: 8px;
+    }
+    .parent_dropdown-content {
+        top: 11px;
+        display: none;
+        z-index: 1;
+    }
+    .dropdown {
+        display: block;
+    }
+    .parent_dropdown-content a {
+        text-decoration: none;
+        display: block;
+        color: black;
+        text-align: left;
+        padding: 7px 20px;
+    }
+    .dropdown:hover .dropbtn {
+        color: gray;
+    }
+    .parent_dropdown-content a:hover {}
+    .show {
+        display: block;
+    }
+    .dropdown .dropbtn a:hover {
+        color: gray;
+    }
+}
+
+
+/***************************************HEADERSLUT******************************************/
+
+/***************************************FOOTERSRART******************************************/
+
+footer {
+    height: auto;
+    color: black;
+    border-top: 1px solid black;
+    display: grid;
+    grid-template-columns: auto 220px 260px 220px auto;
+    margin-bottom: 10px;
+}
+
+.adresse {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin-top: 15px;
+}
+
+.aabningtider {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    margin-top: 15px;
+}
+
+.kontakt {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    margin-top: 15px;
+}
+
+.overskrift_footer {
+    font-family: "Josefin Slab";
+    font-size: 22px;
+    display: block;
+    margin: 10px;
+}
+
+.under_footer {
+    font-family: "arvo";
+    font-size: 15px;
+    display: block;
+    margin: 10px;
+}
+
+
+@media screen and (max-width:700px) {
+    footer {
+        height: auto;
+        display: grid;
+        grid-template-columns: auto 220px auto;
+        grid-template-rows: 1fr 1fr 1fr;
+        margin-bottom: 0;
+    }
+    .adresse {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    .aabningtider {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        margin-top: 5px;
+    }
+    .kontakt {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        grid-row-end: 4;
+        margin-top: 0px;
+    }
+}
+
+
+/***************************************FOOTERSLUT******************************************/
