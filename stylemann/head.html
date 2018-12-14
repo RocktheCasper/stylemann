@@ -65,63 +65,6 @@
 </template>
 <script src="js/script.js"></script>
 <script>
-    let dest = document.querySelector(".page-container");
-
-    let jsonFile;
-
-
-
-    document.addEventListener("DOMContentLoaded", getJson);
-
-    async function getJson() {
-
-        let myJson = await fetch("http://rockbottomproductions.dk/kea/sem2/stylemann/wp-json/wp/v2/homepage");
-
-        jsonFile = await myJson.json();
-
-
-        visIndhold();
-    }
-
-    function visIndhold() {
-        let dest = document.querySelector(".page-container"),
-            temp = document.querySelector("#home");
-
-        let klon = temp.cloneNode(true).content;
-
-        jsonFile.forEach(indholdData => {
-            // Featured content boks 1
-            klon.querySelector("#url1").href = indholdData.acf.link1;
-            klon.querySelector("#icon1").src = indholdData.acf.icon1;
-            klon.querySelector("#link1-overskrift").innerHTML = "<h2>" + indholdData.acf.h2_1 + "</h2>";
-            klon.querySelector("#link1-text").innerHTML = indholdData.acf.icontekst1;
-            // Featured content boks 2
-            klon.querySelector("#url2").href = indholdData.acf.link2;
-            klon.querySelector("#icon2").src = indholdData.acf.icon2;
-            klon.querySelector("#link2-overskrift").innerHTML = "<h2>" + indholdData.acf.h2_2 + "</h2>";
-            klon.querySelector("#link2-text").innerHTML = indholdData.acf.icontekst2;
-            // Featured content boks 3
-            klon.querySelector("#url3").href = indholdData.acf.link3;
-            klon.querySelector("#icon3").src = indholdData.acf.icon3;
-            klon.querySelector("#link3-overskrift").innerHTML = "<h2>" + indholdData.acf.h2_3 + "</h2>";
-            klon.querySelector("#link3-text").innerHTML = indholdData.acf.icontekst3;
-            // Featured content boks 4
-            klon.querySelector("#url4").href = indholdData.acf.link4;
-            klon.querySelector("#icon4").src = indholdData.acf.icon4;
-            klon.querySelector("#link4-overskrift").innerHTML = "<h2>" + indholdData.acf.h2_4 + "</h2>";
-            klon.querySelector("#link4-text").innerHTML = indholdData.acf.icontekst4;
-
-            klon.querySelector(".citat").textContent = indholdData.acf.citat;
-
-            klon.querySelector("#billede1").src = indholdData.acf.billede1;
-            klon.querySelector("#billede2").src = indholdData.acf.billede2;
-            klon.querySelector("#billede3").src = indholdData.acf.billede3;
-
-            dest.appendChild(klon);
-        })
-    }
-
-
     let indhold;
     document.addEventListener("DOMContentLoaded", hentJson);
     async function hentJson() {
