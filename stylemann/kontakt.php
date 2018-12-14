@@ -18,21 +18,21 @@
         <?php include "footer.html"; ?>
         <template id="kontakt">
             <div id="box1">
-                <div id="icon1" class="icon"><img alt="" src="http://rockbottomproductions.dk/kea/sem2/stylemann/wp-content/uploads/2018/12/Asset-3.png"></div>
+                <div id="icon1" class="pageicon"><img alt="" src="http://rockbottomproductions.dk/kea/sem2/stylemann/wp-content/uploads/2018/12/Asset-3.png"></div>
                 <div id="overskrift1">
                     <h2>Info</h2>
                 </div>
                 <div id="tekst1"></div>
             </div>
             <div id="box2">
-                <div id="icon2" class="icon"><img alt="" src="http://rockbottomproductions.dk/kea/sem2/stylemann/wp-content/uploads/2018/12/Asset-4.png"></div>
+                <div id="icon2" class="pageicon"><img alt="" src="http://rockbottomproductions.dk/kea/sem2/stylemann/wp-content/uploads/2018/12/Asset-4.png"></div>
                 <div id="overskrift2">
                     <h2>Åbningstider</h2>
                 </div>
                 <div id="tekst2"></div>
             </div>
             <div id="box3">
-                <div id="icon3" class="icon"><img alt="" src="http://rockbottomproductions.dk/kea/sem2/stylemann/wp-content/uploads/2018/12/Asset-2.png"></div>
+                <div id="icon3" class="pageicon"><img alt="" src="http://rockbottomproductions.dk/kea/sem2/stylemann/wp-content/uploads/2018/12/Asset-2.png"></div>
                 <div id="overskrift3">
                     <h2>Adresse</h2>
                 </div>
