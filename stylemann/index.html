@@ -10,10 +10,7 @@
 
 <body>
     <div class="splash">
-        <!--- <video autoplay loop muted class="wrapper__video">
-            <source src="/css/img/splashysplash.mp4">
-            </video>
-            --->
+        <div class="wrapper__video"></div>
     </div>
     <div class="logo"></div>
     <header>
@@ -94,12 +91,12 @@
         </a>
     </template>
     <template id="splash">
-        <div id="splash-video">
-            <video id="loop-video" autoplay loop muted class="wrapper__video">
-                <source src="">
-            </video>
 
-        </div>
+        <video id="loop-video" autoplay loop muted class="wrapper__video">
+            <source src="">
+        </video>
+
+
     </template>
     <template id="home">
         <div class="featured-content">
@@ -189,7 +186,7 @@
     </template>
     <script src="js/script.js"></script>
     <script>
-        let videoDest = document.querySelector(".splash");
+        let videoDest = document.querySelector(".wrapper__video");
 
 
         let dest = document.querySelector(".page-container");
@@ -212,7 +209,7 @@
         }
 
         function visVideo() {
-            let videoDest = document.querySelector(".splash"),
+            let videoDest = document.querySelector(".wrapper__video"),
                 temp = document.querySelector("#splash");
 
             let klon = temp.cloneNode(true).content;
@@ -332,6 +329,7 @@
                 }
             })
         }
+
     </script>
 </body>
 
