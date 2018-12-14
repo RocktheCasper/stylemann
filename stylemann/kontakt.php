@@ -7,15 +7,6 @@
     <link rel="stylesheet" href="css/kontakt.css">
     <title>Kontakt Stylemann</title>
 
-    <style>
-        .icon img {
-
-            width: 3vw;
-            max-width: 50px;
-            min-width: 20px;
-
-        }
-    </style>
 </head>
 
 <body>
@@ -24,7 +15,7 @@
         <section class="page-container">
 
         </section>
-<?php include "footer.html"; ?>
+        <?php include "footer.html"; ?>
         <template id="kontakt">
             <div id="box1">
                 <div id="icon1" class="icon"><img alt="" src="http://rockbottomproductions.dk/kea/sem2/stylemann/wp-content/uploads/2018/12/Asset-3.png"></div>
@@ -83,6 +74,7 @@
                 dest.appendChild(klon);
             })
         }
+
     </script>
 </body>
 
