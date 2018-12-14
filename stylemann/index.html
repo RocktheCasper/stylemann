@@ -104,11 +104,11 @@
             <!--- Box 1 --->
             <div id="link1">
                 <div class="billede">
-                    <a id="url1" href="">
+                    <a id="url1billede" href="">
                         <img id="icon1" alt="" src="">
                     </a>
                 </div>
-                <a href="#">
+                <a id="url1" href="">
                     <div id="link1-overskrift">
 
                     </div>
@@ -121,11 +121,11 @@
             <!--- Box 2 --->
             <div id="link2">
                 <div class="billede">
-                    <a id="url2" href="">
+                    <a id="url2billede" href="">
                         <img id="icon2" alt="" src="">
                     </a>
                 </div>
-                <a href="#">
+                <a id="url2" href="">
                     <div id="link2-overskrift">
 
                     </div>
@@ -138,11 +138,11 @@
             <!--- Box 3 --->
             <div id="link3">
                 <div class="billede">
-                    <a id="url3" href="">
+                    <a id="url3billede" href="">
                         <img id="icon3" alt="" src="">
                     </a>
                 </div>
-                <a href="#">
+                <a id="url3" href="">
                     <div id="link3-overskrift">
 
                     </div>
@@ -154,11 +154,11 @@
             <!--- Box 4 --->
             <div id="link4">
                 <div class="billede">
-                    <a id="url4" href="">
+                    <a id="url4billede" href="">
                         <img id="icon4" alt="" src="">
                     </a>
                 </div>
-                <a href="#">
+                <a id="url4" href="">
                     <div id="link4-overskrift">
 
                     </div>
@@ -228,21 +228,25 @@
 
             jsonFile.forEach(indholdData => {
                 // Featured content boks 1
+                klon.querySelector("#url1billede").href = indholdData.acf.link1;
                 klon.querySelector("#url1").href = indholdData.acf.link1;
                 klon.querySelector("#icon1").src = indholdData.acf.icon1;
                 klon.querySelector("#link1-overskrift").innerHTML = "<h2>" + indholdData.acf.h2_1 + "</h2>";
                 klon.querySelector("#link1-text").innerHTML = indholdData.acf.icontekst1;
                 // Featured content boks 2
+                klon.querySelector("#url2billede").href = indholdData.acf.link2;
                 klon.querySelector("#url2").href = indholdData.acf.link2;
                 klon.querySelector("#icon2").src = indholdData.acf.icon2;
                 klon.querySelector("#link2-overskrift").innerHTML = "<h2>" + indholdData.acf.h2_2 + "</h2>";
                 klon.querySelector("#link2-text").innerHTML = indholdData.acf.icontekst2;
                 // Featured content boks 3
+                klon.querySelector("#url3billede").href = indholdData.acf.link3;
                 klon.querySelector("#url3").href = indholdData.acf.link3;
                 klon.querySelector("#icon3").src = indholdData.acf.icon3;
                 klon.querySelector("#link3-overskrift").innerHTML = "<h2>" + indholdData.acf.h2_3 + "</h2>";
                 klon.querySelector("#link3-text").innerHTML = indholdData.acf.icontekst3;
                 // Featured content boks 4
+                klon.querySelector("#url4billede").href = indholdData.acf.link4;
                 klon.querySelector("#url4").href = indholdData.acf.link4;
                 klon.querySelector("#icon4").src = indholdData.acf.icon4;
                 klon.querySelector("#link4-overskrift").innerHTML = "<h2>" + indholdData.acf.h2_4 + "</h2>";
