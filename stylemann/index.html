@@ -10,11 +10,12 @@
 
 <body>
     <div class="splash">
-            <video autoplay loop muted class="wrapper__video">
+        <!--- <video autoplay loop muted class="wrapper__video">
             <source src="/css/img/splashysplash.mp4">
             </video>
-        </div>
-        <div class="logo"></div>
+            --->
+    </div>
+    <div class="logo"></div>
     <header>
 
         <div class="parent_dropdown">
@@ -92,6 +93,14 @@
             </p>
         </a>
     </template>
+    <template id="splash">
+        <div id="splash-video">
+            <video id="loop-video" autoplay loop muted class="wrapper__video">
+                <source src="">
+            </video>
+
+        </div>
+    </template>
     <template id="home">
         <div class="featured-content">
 
@@ -102,9 +111,11 @@
                         <img id="icon1" alt="" src="">
                     </a>
                 </div>
-                <a href="#"><div id="link1-overskrift">
+                <a href="#">
+                    <div id="link1-overskrift">
 
-                </div></a>
+                    </div>
+                </a>
                 <div id="link1-text">
 
                 </div>
@@ -117,9 +128,11 @@
                         <img id="icon2" alt="" src="">
                     </a>
                 </div>
-                <a href="#"><div id="link2-overskrift">
+                <a href="#">
+                    <div id="link2-overskrift">
 
-                </div></a>
+                    </div>
+                </a>
                 <div id="link2-text">
 
                 </div>
@@ -132,9 +145,11 @@
                         <img id="icon3" alt="" src="">
                     </a>
                 </div>
-                <a href="#"><div id="link3-overskrift">
+                <a href="#">
+                    <div id="link3-overskrift">
 
-                </div></a>
+                    </div>
+                </a>
                 <div id="link3-text">
 
                 </div>
@@ -146,9 +161,11 @@
                         <img id="icon4" alt="" src="">
                     </a>
                 </div>
-                <a href="#"><div id="link4-overskrift">
+                <a href="#">
+                    <div id="link4-overskrift">
 
-                </div></a>
+                    </div>
+                </a>
                 <div id="link4-text">
 
                 </div>
@@ -172,6 +189,9 @@
     </template>
     <script src="js/script.js"></script>
     <script>
+        let videoDest = document.querySelector(".splash");
+
+
         let dest = document.querySelector(".page-container");
 
         let jsonFile;
@@ -188,6 +208,19 @@
 
 
             visIndhold();
+            visVideo();
+        }
+
+        function visVideo() {
+            let videoDest = document.querySelector(".splash"),
+                temp = document.querySelector("#splash");
+
+            let klon = temp.cloneNode(true).content;
+
+            jsonFile.forEach(splashData => {
+                klon.querySelector("#loop-video").src = splashData.acf.splash_video;
+                videoDest.appendChild(klon);
+            })
         }
 
         function visIndhold() {
